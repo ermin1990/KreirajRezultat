@@ -9,7 +9,7 @@ body {
     width: 800px;
     height: 800px;
     margin: 0 auto;
-    display: visible;
+    display: none;
     
 }
 
@@ -151,7 +151,7 @@ body {
     flex-grow: 1;
     outline: none;
     font-size: 25px;
-    height: 30px;
+    height: 60px;
     border-radius: none;
     margin: 6px;
     border: none;
@@ -160,6 +160,8 @@ body {
 select{
     font-size: 15px;
     height: 30px;
+    height: 60px;
+    justify-self: center;
 }
 .domaciKlubInfo{
     padding: 5px;
@@ -169,4 +171,15 @@ select{
 .gostiKlubInfo{
     padding: 5px;
     background-color: rgb(182, 185, 189);
+}
+
+button{
+    font-weight: 600;
+    font-size: 22px;
+    width: 300px;
+    height: 60px;
+    margin: 10px auto;
+    outline: none;
+    border-style: none;
+    background-color: rgb(116, 159, 214);
 }

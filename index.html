@@ -12,15 +12,16 @@
 <body onload="autoClick();">
     <div class="forma">
         <div class="infoLige">
-            <p>Informacije o ligi i utakmici</p>
+            <h2>Informacije o ligi i utakmici</h2>
             <input type="text" id="nazivLige" placeholder="Naziv Lige" />
-            <input type="number" name="" id="kolo" placeholder="Kolo" style="width: 100px" />
+            <input type="number" name="" id="koloLige" placeholder="Kolo" style="width: 100px" />
             <br />
             <div class="datumiVrijeme">
                 <p>Datum i vrijeme</p>
-                <input type="date" name="" id="datum" />
+                <input type="date" name="" id="datum"/>
                 <input type="time" name="" id="vrijeme" />
             </div>
+            
         </div>
 
         <div class="domaciKlubInfo">
@@ -28,15 +29,11 @@
             <input type="text" name="" id="nazivDomacegKluba" placeholder="Naziv domaćeg kluba"><br>
             <input type="text" name="" id="mjestoDomacegKluba" placeholder="Mjesto domaćeg kluba">
             <br>
-            <input type="number" name="" id="goloviDomaciKlub" placeholder="Golovi" style="width: 100px">
+            <input type="number" onchange="domaciGoloviCreate()" id="goloviDomaciKlub" placeholder="Golovi" style="width: 100px">
             <br>
             <p>Strijelci domaćeg kluba</p>
-            <select name="" id="događajDK">
-                <option value="golDK">Gol</option>
-                <option value="autogolDK">Auto gol</option>
-            </select>
-            <input type="number" name="" id="minutaStrijelac" placeholder="Min." style="width: 100px">
-            <input type="text" name="" id="strijelci" placeholder="Ime igrača">
+            <div class="strijelciDomaciKlub"></div>
+            
           
         </div>
         <br>
@@ -46,45 +43,42 @@
             <input type="text" name="" id="nazivGostKluba" placeholder="Naziv gostujućeg kluba"><br>
             <input type="text" name="" id="mjestoGostKluba" placeholder="Mjesto gostujućeg kluba">
             <br>
-            <input type="number" name="" id="goloviGostKlub" placeholder="Golovi" style="width: 100px">
+            <input type="number" onchange="gostiGoloviCreate()" id="goloviGostKlub" placeholder="Golovi" style="width: 100px">
             <br>
-            <p>Strijelci</p>
-            <select name="" id="događajGK">
-                <option value="golGK">Gol</option>
-                <option value="autogolGK">Auto gol</option>
-            </select>
-            <input type="number" name="" id="minutaStrijelac" placeholder="Min." style="width: 100px">
-            <input type="text" name="" id="strijelci" placeholder="Ime igrača">
+            <p>Strijelci gostujućeg kluba</p>
+            <div class="strijelciGostiKlub"></div>
           
         </div>
 
-
+        <button onclick="kreirajObjavu()">Kreiraj objavu</button>
     </div>
+
+    
 
     <div id="htmlContent">
         <div class="container">
             <div class="liga">
-                <h2 id="liga">3. Kantonalna liga Istok</h2>
-                <h3 id="kolo">4 Kolo</h3>
-                <p id="datumIvrijeme">15.4.2022.god 18:00</p>
+                <h2 id="liga">Naziv lige</h2>
+                <h3 id="kolo">Kolo</h3>
+                <p id="datumIvrijeme">Datum i vrijeme utakmice</p>
             </div>
 
             <div class="klubovi">
                 <div class="domaciKlub">
-                    <strong class="imekluba">FK Mladost</strong>
-                    <p class="mjesto">Gornja Tuzla</p>
+                    <strong class="imekluba">Domaći klub</strong>
+                    <p class="mjesto">Mjesto domaćeg kluba</p>
                 </div>
                 <div class="vs"></div>
                 <div class="gostiKlub">
-                    <strong class="imekluba">FK Radnik</strong>
-                    <p class="mjesto">Lipnica</p>
+                    <strong class="imekluba">Gostujući klub</strong>
+                    <p class="mjesto">Mjesto gostujućeg kluba</p>
                 </div>
             </div>
 
             <div class="rezultatHolder">
-                <div class="domaciRez">5</div>
+                <div class="domaciRez">-</div>
                 <div class="vs">VS</div>
-                <div class="gostiRez">1</div>
+                <div class="gostiRez">-</div>
             </div>
 
             <div class="strijelciHolder">
@@ -99,12 +93,16 @@
                     <p>22' Ermin Selimović</p>
                 </div>
             </div>
-
-            <div class="informacije"></div>
+            <br><br>
+            <div class="informacije">Zapraite nas na Instagramu @kreirajObjavuZaKlub</div>
         </div>
     </div>
 
-    <div class="download"><a id="download">Preuzmi pripremu</a></div>
+    <div class="download">
+        <button onclick="nazad()">Nazad</button>
+        
+        <a id="download">Preuzmi pripremu</a>
+    </div>
 
     <script src="/main.js"></script>
 </body>
