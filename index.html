@@ -10,52 +10,101 @@
 </head>
 
 <body onload="autoClick();">
-
-    <div id="htmlContent">
-
-        <div class="container">
-
-            <div class="liga">
-                <h2>3. Kantonalna liga Istok</h2>
-                <h4>4 Kolo 15.4.2022. god 18:00</h4>
+    <div class="forma">
+        <div class="infoLige">
+            <p>Informacije o ligi i utakmici</p>
+            <input type="text" id="nazivLige" placeholder="Naziv Lige" />
+            <input type="number" name="" id="kolo" placeholder="Kolo" style="width: 100px" />
+            <br />
+            <div class="datumiVrijeme">
+                <p>Datum i vrijeme</p>
+                <input type="date" name="" id="datum" />
+                <input type="time" name="" id="vrijeme" />
             </div>
-            <div class="info">Informacije</div>
-            <div class="goloviDK">
-                <div class="golDK">5</div>
-                <div class="nazivDK">FK Mladost</div>
-                <p class="mjesto">Gornja Tuzla</p>
-            </div>
-            <div class="goloviGK">
-                <div class="golGK">1</div>
-                <div class="nazivGK">FK Proleter</div>
-                <p class="mjesto">Gornja Tuzla</p>
-            </div>
-            <div class="strijelciDK">
-                <p>12.min - Ermin Selimovic</p>
-                <p>12.min - Ermin Selimovic</p>
-                <p>12.min - Ermin Selimovic</p>
-                <p>12.min - Ermin Selimovic</p>
-                <p>12.min - Ermin Selimovic</p>
-                <p>12.min - Ermin Selimovic</p>
-
-
-            </div>
-            <div class="strijelciGK">
-                <p>12.min - Ermin Selimovic</p>
-
-            </div>
-
         </div>
 
+        <div class="domaciKlubInfo">
+            <h3>Domaći klub</h3>
+            <input type="text" name="" id="nazivDomacegKluba" placeholder="Naziv domaćeg kluba"><br>
+            <input type="text" name="" id="mjestoDomacegKluba" placeholder="Mjesto domaćeg kluba">
+            <br>
+            <input type="number" name="" id="goloviDomaciKlub" placeholder="Golovi" style="width: 100px">
+            <br>
+            <p>Strijelci domaćeg kluba</p>
+            <select name="" id="događajDK">
+                <option value="golDK">Gol</option>
+                <option value="autogolDK">Auto gol</option>
+            </select>
+            <input type="number" name="" id="minutaStrijelac" placeholder="Min." style="width: 100px">
+            <input type="text" name="" id="strijelci" placeholder="Ime igrača">
+          
+        </div>
+        <br>
 
-
-
+        <div class="gostiKlubInfo">
+            <h3>Gostujući klub</h3>
+            <input type="text" name="" id="nazivGostKluba" placeholder="Naziv gostujućeg kluba"><br>
+            <input type="text" name="" id="mjestoGostKluba" placeholder="Mjesto gostujućeg kluba">
+            <br>
+            <input type="number" name="" id="goloviGostKlub" placeholder="Golovi" style="width: 100px">
+            <br>
+            <p>Strijelci</p>
+            <select name="" id="događajGK">
+                <option value="golGK">Gol</option>
+                <option value="autogolGK">Auto gol</option>
+            </select>
+            <input type="number" name="" id="minutaStrijelac" placeholder="Min." style="width: 100px">
+            <input type="text" name="" id="strijelci" placeholder="Ime igrača">
+          
+        </div>
 
 
     </div>
 
+    <div id="htmlContent">
+        <div class="container">
+            <div class="liga">
+                <h2 id="liga">3. Kantonalna liga Istok</h2>
+                <h3 id="kolo">4 Kolo</h3>
+                <p id="datumIvrijeme">15.4.2022.god 18:00</p>
+            </div>
 
-    <a id="download">Preuzmi pripremu</a>
+            <div class="klubovi">
+                <div class="domaciKlub">
+                    <strong class="imekluba">FK Mladost</strong>
+                    <p class="mjesto">Gornja Tuzla</p>
+                </div>
+                <div class="vs"></div>
+                <div class="gostiKlub">
+                    <strong class="imekluba">FK Radnik</strong>
+                    <p class="mjesto">Lipnica</p>
+                </div>
+            </div>
+
+            <div class="rezultatHolder">
+                <div class="domaciRez">5</div>
+                <div class="vs">VS</div>
+                <div class="gostiRez">1</div>
+            </div>
+
+            <div class="strijelciHolder">
+                <div class="domaciStrijelci">
+                    <p>22' Ermin Selimović</p>
+                    <p>22' Ermin Selimović</p>
+                    <p>22' Ermin Selimović</p>
+                    <p>22' Ermin Selimović</p>
+                </div>
+                <div class="vl"></div>
+                <div class="gostiStrijelci">
+                    <p>22' Ermin Selimović</p>
+                </div>
+            </div>
+
+            <div class="informacije"></div>
+        </div>
+    </div>
+
+    <div class="download"><a id="download">Preuzmi pripremu</a></div>
 
     <script src="/main.js"></script>
 </body>
