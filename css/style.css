@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#htmlContent {
+    color: rgb(4, 54, 91);
+    width: 800px;
+    height: 800px;
+}
+
+.strijelci {
+    font-size: 0.8em;
+    line-height: 1.2px;
+}
+
+.container {
+    background-image: url("../assets/Pozadina2.jpg");
+    opacity: 0.9;
+    background-position: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 390px 20px 390px;
+    grid-template-rows: 100px 300px 300px 100px;
+    gap: 0px 0px;
+    grid-template-areas: "liga liga liga" "goloviDK . goloviGK" "strijelciDK . strijelciGK" "info info info";
+}
+
+.liga {
+    grid-area: liga;
+}
+
+.info {
+    grid-area: info;
+}
+
+.goloviDK {
+    margin-top: 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.7fr;
+    gap: 0px 0px;
+    grid-template-areas: "golDK golDK golDK" "golDK golDK golDK" "nazivDK nazivDK nazivDK";
+    grid-area: goloviDK;
+}
+
+.mjesto {
+    margin-top: -50px;
+    justify-content: center;
+}
+
+.golDK {
+    font-weight: 700;
+    font-size: 300px;
+    grid-area: golDK;
+}
+
+.nazivDK {
+    font-size: 60px;
+    grid-area: nazivDK;
+}
+
+.goloviGK {
+    margin-top: 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.7fr;
+    gap: 0px 0px;
+    grid-template-areas: "golGK golGK golGK" "golGK golGK golGK" "nazivGK nazivGK nazivGK";
+    grid-area: goloviGK;
+}
+
+.golGK {
+    font-weight: 700;
+    font-size: 300px;
+    grid-area: golGK;
+}
+
+.nazivGK {
+    font-size: 60px;
+    grid-area: nazivGK;
+}
+
+.strijelciDK {
+    line-height: 5px;
+    margin-top: 140px;
+    grid-area: strijelciDK;
+}
+
+.strijelciGK {
+    line-height: 5px;
+    margin-top: 140px;
+    grid-area: strijelciGK;
+}
