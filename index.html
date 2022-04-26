@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="bs" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kreiraj rezultat za svoj klub</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="manifest" href="manifest.webmanifest">
 </head>
 
-<body onload="autoClick();">
+<body>
+    <header>
+        <div class="headerHolder">
+            <div class="logo">Kreiraj objavu za svoj klub</div>
+            <div class="info">
+                Poštovani korisnici, ovo je tek prva verzija našeg besplatnog
+                servirsa<br />za kreiranje grafičkih objava za rezultate.<br /><br>Uskoro
+                planiramo nadograditi naš servis i za kreiranje i najave utakmica <br>kao i veliki izbor različitih pozadina i boja kako bi što bolje objavu prilagodili svom klubu.
+            </div>
+        </div>
+    </header>
+
     <div class="forma">
         <div class="infoLige">
             <h2>Informacije o ligi i utakmici</h2>
             <input type="text" id="nazivLige" placeholder="Naziv Lige" />
-            <input type="number" name="" id="koloLige" placeholder="Kolo" style="width: 100px" />
+            <input type="number" name="" id="koloLige" placeholder="Kolo" style="width: 100px" min="1" max="40" />
             <br />
             <div class="datumiVrijeme">
                 <p>Datum i vrijeme</p>
-                <input type="date" name="" id="datum"/>
+                <input type="date" name="" id="datum" />
                 <input type="time" name="" id="vrijeme" />
             </div>
-            
         </div>
 
-        <div class="domaciKlubInfo">
-            <h3>Domaći klub</h3>
-            <input type="text" name="" id="nazivDomacegKluba" placeholder="Naziv domaćeg kluba"><br>
-            <input type="text" name="" id="mjestoDomacegKluba" placeholder="Mjesto domaćeg kluba">
-            <br>
-            <input type="number" onchange="domaciGoloviCreate()" id="goloviDomaciKlub" placeholder="Golovi" style="width: 100px">
-            <br>
-            <p>Strijelci domaćeg kluba</p>
-            <div class="strijelciDomaciKlub"></div>
-            
-          
-        </div>
-        <br>
+        <div class="klubovi">
+            <div class="domaciKlubInfo">
+                <h3>Domaći klub</h3>
+                <input type="text" name="" id="nazivDomacegKluba" placeholder="Naziv domaćeg kluba" /><br />
+                <input type="text" name="" id="mjestoDomacegKluba" placeholder="Mjesto domaćeg kluba" />
+                <br />
+                <input type="number" onchange="domaciGoloviCreate()" id="goloviDomaciKlub" placeholder="Golovi"
+                    style="width: 100px" min="0" />
+                <br />
+                <p>Strijelci domaćeg kluba</p>
+                <div class="strijelciDomaciKlub"></div>
+            </div>
+            <br />
 
-        <div class="gostiKlubInfo">
-            <h3>Gostujući klub</h3>
-            <input type="text" name="" id="nazivGostKluba" placeholder="Naziv gostujućeg kluba"><br>
-            <input type="text" name="" id="mjestoGostKluba" placeholder="Mjesto gostujućeg kluba">
-            <br>
-            <input type="number" onchange="gostiGoloviCreate()" id="goloviGostKlub" placeholder="Golovi" style="width: 100px">
-            <br>
-            <p>Strijelci gostujućeg kluba</p>
-            <div class="strijelciGostiKlub"></div>
-          
+            <div class="gostiKlubInfo">
+                <h3>Gostujući klub</h3>
+                <input type="text" name="" id="nazivGostKluba" placeholder="Naziv gostujućeg kluba" /><br />
+                <input type="text" name="" id="mjestoGostKluba" placeholder="Mjesto gostujućeg kluba" />
+                <br />
+                <input type="number" onchange="gostiGoloviCreate()" id="goloviGostKlub" placeholder="Golovi"
+                    style="width: 100px" min="0"/>
+                <br />
+                <p>Strijelci gostujućeg kluba</p>
+                <div class="strijelciGostiKlub"></div>
+            </div>
         </div>
-
         <button onclick="kreirajObjavu()">Kreiraj objavu</button>
     </div>
-
-    
 
     <div id="htmlContent">
         <div class="container">
@@ -82,27 +92,32 @@
             </div>
 
             <div class="strijelciHolder">
-                <div class="domaciStrijelci">
-                    <p>22' Ermin Selimović</p>
-                    <p>22' Ermin Selimović</p>
-                    <p>22' Ermin Selimović</p>
-                    <p>22' Ermin Selimović</p>
-                </div>
+                <div class="domaciStrijelci"></div>
                 <div class="vl"></div>
-                <div class="gostiStrijelci">
-                    <p>22' Ermin Selimović</p>
-                </div>
+                <div class="gostiStrijelci"></div>
             </div>
-            <br><br>
-            <div class="informacije">Zapraite nas na Instagramu @kreirajObjavuZaKlub</div>
+            <br /><br />
+            <div class="informacije">
+                Zapraite nas na Instagramu @kreirajObjavuZaKlub
+            </div>
         </div>
     </div>
 
     <div class="download">
         <button onclick="nazad()">Nazad</button>
-        
+
         <a id="download">Preuzmi pripremu</a>
     </div>
+
+    <footer>
+        <div class="footerHolder">
+            <div class="social">
+                Zapratite nas na društvenim mrežama<br />Instagram:
+                <a href="https://www.instagram.com/kreirajObjavuZaKlub" target="_blank">@kreirajObjavuZaKlub</a><br>
+                <h4>Verzija 1.0</h4>
+            </div>
+        </div>
+    </footer>
 
     <script src="/main.js"></script>
 </body>
