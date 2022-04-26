@@ -89,7 +89,7 @@ function kreirajObjavu() {
     /*PRIKAZIVANJE OBJAVE*/
     forma.style.display = "none";
     priprema.style.display = 'block';
-    downloadPripreme.style.visibility = 'visible';
+    downloadPripreme.style.display = 'block';
 
 
 
